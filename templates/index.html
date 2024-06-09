@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+<!-- title of the html -->
+{% block title %}
+<title>Home</title>
+{% endblock %}
+
+<!-- css stylesheel block -->
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<main>
+    <div class="main-container">
+        <div class="flex-class">
+            <a href="{{url_for('dashboard_page')}}">
+                <img src="../static/assets/navigation/dashboard.png" alt="dashboard">
+                <p>dashboard</p>
+            </a>
+        </div>
+        <div class="flex-class">
+            <a href="{{url_for('firewall_page')}}">
+                <img src="../static/assets/navigation/firewall.png" alt="firewall">
+                <p>firewall</p>
+            </a>
+        </div>
+        <div class="flex-class">
+            <a href="{{url_for('domain_blocking_page')}}">
+                <img src="../static/assets/navigation/domain.png" alt="domain">
+                <p>domain blocking</p>
+            </a>
+        </div>
+        <div class="flex-class">
+            <a href="{{url_for('password_manager_page')}}">
+                <img src="../static/assets/navigation/password-manager.png" alt="password-manager">
+                <p>password manager</p>
+            </a>
+        </div>
+        <div class="flex-class">
+            <a href="{{url_for('phishingurl_detection_page')}}">
+                <img src="../static/assets/navigation/phishing.png" alt="phishing">
+                <p>phishing</p>
+            </a>
+        </div>
+        <!-- <div class="flex-class">
+            <a href="{{url_for('help_page')}}">
+                <img src="../static/assets/navigation/question.png" alt="help">
+                <p>help</p>
+            </a>
+        </div> -->
+    </div>
+</main>
+
+{% endblock %}

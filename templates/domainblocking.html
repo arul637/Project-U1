@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Domain Blocking</title>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/domainblocking.css') }}">
+{% endblock %}
+
+{% block body %}
+<section class="container">
+
+    <form action="{{ url_for('domain_url_2_block') }}" method="post" class="domainblocking-form">
+        <input type="text" name="url" id="url" class="url" placeholder="https://example.com">
+        <input type="submit" value="block" class="submit">
+    </form>
+
+</section>
+
+<!-- article 1 -->
+{% for i in domains %}
+<article class="article">
+    <div class="flex-class">
+        <p class="title">{{ i }}</p>
+        <img src="{{ url_for('static', filename='assets/navigation/nav.png') }}" alt="navigation" class="navigation">
+    </div>
+    <div class="flex-class answer">
+        <p><span>unblock</span> <b><i>{{ i }}</i></b> from blocklist</p>
+        <img src="{{ url_for('static', filename='assets/navigation/trash.png') }}" alt="delete" class="delete">
+    </div>
+</article>
+{% endfor %}
+<!-- random static article for testing purpose -->
+<!-- <article class="article">
+    <div class="flex-class">
+        <p class="title">title 2</p>
+        <img src="{{ url_for('static', filename='assets/navigation/nav.png') }}" alt="navigation" class="navigation">
+    </div>
+    <div class="flex-class answer">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem eos dolorum accusantium ipsam ad distinctio quos quibusdam tempore quo voluptatem.</p>
+        <img src="{{ url_for('static', filename='assets/navigation/trash.png') }}" alt="delete" class="delete">
+    </div>
+</article> -->
+
+<!-- <article class="article">
+    <div class="flex-class">
+        <p class="title">title 3</p>
+        <img src="{{ url_for('static', filename='assets/navigation/nav.png') }}" alt="navigation" class="navigation">
+    </div>
+    <div class="flex-class answer">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem eos dolorum accusantium ipsam ad distinctio quos quibusdam tempore quo voluptatem.</p>
+        <img src="{{ url_for('static', filename='assets/navigation/trash.png') }}" alt="delete" class="delete">
+    </div>
+</article> -->
+
+{% endblock %}
+
+{% block script %}
+
+<script>
+    const containers = document.querySelectorAll(".article");
+
+    containers.forEach(function(container){
+        const navigation = container.querySelector(".navigation");
+        const answer = container.querySelector(".answer");
+        const remove = container.querySelector(".delete");
+        const title = container.querySelector(".title").textContent;
+        navigation.addEventListener("click", function(){
+            answer.classList.toggle("show-answer");
+        })
+        remove.addEventListener("click", function(){
+            remove.parentElement.parentElement.classList.add("notshow");
+            $.ajax({
+                type: "POST",
+                url: "{{ url_for('domain_url_2_delete') }}",
+                data: {"url_name": title}
+            })
+        })
+    })
+</script>
+
+{% endblock %}

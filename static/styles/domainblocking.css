@@ -1,0 +1,139 @@
+.container {
+    background-color: white;
+    padding: 1rem;
+    width: 35rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--light-shadow);
+    transition: var(--common-transition);
+    margin: 5rem auto;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container form input {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1.5px solid var(--secondary-color);
+    font-size: 0.85rem;
+    letter-spacing: 0.85px;
+    color: black;
+}
+
+.container form input:focus {
+    outline: none;
+    border: 1.5px solid var(--third-color);
+}
+
+.container .submit {
+    background-color: var(--secondary-color);
+    border: 1px solid aliceblue;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: var(--common-transition);
+}
+
+.container .submit:hover {
+    background-color: var(--third-color);
+}
+
+article {
+    width: 35rem;
+    margin: 1rem auto;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 1px 5px 0 rgb(198, 198, 198);
+}
+
+article img {
+    width: 2rem;
+    height: 2rem;
+}
+
+article .flex-class {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+article .answer {
+    display: none;
+}
+
+article .show-answer {
+    display: flex;
+}
+
+.notshow {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 30rem;
+    }
+    article {
+        width: 30rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        width: 25rem;
+    }
+    article {
+        width: 25rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .container {
+        width: 23rem;
+    }
+    article {
+        width: 23rem;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .container {
+        width: 21.5rem;
+    }
+    article {
+        width: 21.5rem;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .container {
+        width: 20rem;
+    }
+    article {
+        width: 20rem;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .container {
+        width: 17.5rem;
+    }
+    article {
+        width: 17.5rem;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    .container {
+        width: 17rem;
+    }
+    article {
+        width: 17rem;
+    }
+}

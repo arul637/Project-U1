@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../static/root.css">
+    <link rel="stylesheet" href="../static/form.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/root.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/form.css') }}">
+    <title>Register</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <form action="" class="login-form" method="POST">
+            <div class="form-field">
+                <label for="firstname">First Name</label>
+                <input type="text" name="firstname" id="firstname">
+            </div>
+            <div class="form-field">
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname" id="lastname">
+            </div>
+            <div class="form-field">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email">
+            </div>
+            <div class="form-field">
+                <label for="password">password</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <div class="already-have">
+                <p>Already have an account? <a href="/login">login</a></p>
+            </div>
+            <input type="submit" value="submit" class="submit-button">
+        </form>
+
+    </div>
+
+</body>
+</html>

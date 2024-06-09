@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Phishing URL Detection</title>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/phishingurldetection.css') }}">
+{% endblock %}
+
+{% block body %}
+<section class="phishing-content">
+    <form action="{{ url_for('phishing_urls') }}" method="POST">
+        <input type="text" name="url" id="url" class="url-input" placeholder="https://google.com">
+        <input type="submit" value="submit" class="submit-button">
+    </form>
+    <div class="phishing-values">
+        <div>
+            <p class="url" id="url">{{ url }}</p>
+        </div>
+        <div class="phishprediction">
+            <div class="circle-phishing">
+                <div class="circle">
+                    <p>{{ phish }}</p>
+                </div>
+                <p>Phishing</p>
+            </div>
+            <div class="circle-phishing">
+                <div class="circle">
+                    <p>{{ nonphish }}</p>
+                </div>
+                <p>Non-Phishing</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+<!-- {% block script %}
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    const submit = document.querySelector(".submit-button");
+    submit.addEventListener("click", function(){
+        const url_name = document.querySelector("#url");
+        console.log(url);
+        $.ajax({
+            type: "POST",
+            url: "{{ url_for('phishing_urls') }}",
+            data: {"url_name": url_name}
+        })
+    })
+</script>
+{% endblock %} -->

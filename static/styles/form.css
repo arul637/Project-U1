@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form {
+    background-color: white;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 23.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5px 10px 0 rgb(175, 175, 175);
+    transition: var(--common-transition);
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-size: 1.25rem;
+}
+
+input {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1.5px solid var(--secondary-color);
+    font-size: 0.85rem;
+    letter-spacing: 0.85px;
+    color: black;
+}
+
+input:focus {
+    outline: none;
+    border: 1.5px solid var(--third-color);
+}
+
+.submit-button {
+    background-color: var(--secondary-color);
+    border: 1px solid aliceblue;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    transition: var(--common-transition);
+}
+
+.submit-button:hover {
+    background-color: var(--third-color);
+}
+
+@media only screen and (max-width: 400px) {
+    .login-form {
+        width: 20rem;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .login-form {
+        width: 18.5rem;
+    }
+    input {
+        padding: 0.25rem;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .login-form {
+        width: 15rem;
+    }
+    input {
+        padding: 0.1rem;
+    }
+}

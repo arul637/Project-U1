@@ -1,0 +1,23 @@
+.circle {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--third-color);
+    box-shadow: var(--light-shadow);
+    margin: 5rem auto;
+    cursor: pointer;
+    transition: var(--common-transition);
+}
+
+.circle:hover {
+    background-color: var(--forth-color);
+}
+
+h1 {
+    text-align: center;
+    margin: 3.5rem auto;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}

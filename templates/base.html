@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- this is title block -->
+    {% block title %}
+    {% endblock %}
+
+    <!-- this is css block -->
+    {% block css %}
+    {% endblock %}
+    <!-- <link rel="stylesheet" href="../static/root.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/root.css') }}">
+</head>
+<body>
+    <!-- header and sidebar is base to all websites -->
+    <header>
+        <button>
+            <img src="{{ url_for('static', filename='assets/navigation/navigation.png') }}" alt="this is for navigation" id="main-images">
+        </button>
+    </header>
+
+    <!-- navigation code -->
+    <aside class="sidebar">
+
+        <div id="logo">
+            <h1>Ultron</h1>
+            <div class="x-close">
+                <img src="{{url_for('static', filename='assets/navigation/close.png')}}" alt="close the sidebar" width="35px" class="close" id="close">
+            </div>
+        </div>
+
+        <div class="navigation">
+            <nav>
+                <div class="nav-icon-name">
+                    <a href="/dashboard">
+                        <!-- <img src="../assets/dashboard.png" alt="" id="navigation-images"> -->
+                        <img src="{{ url_for('static', filename='assets/navigation/dashboard.png') }}" alt="" id="navigation-images">
+                        <p>Dashboard</p>
+                    </a>
+                </div>
+                <div class="nav-icon-name">
+                    <a href="/firewall">
+                        <!-- <img src="../assets/firewall.png" alt="" id="navigation-images"> -->
+                        <img src="{{ url_for('static', filename='assets/navigation/firewall.png') }}" alt="" id="navigation-images">
+                        <p>Firewall</p>
+                    </a>
+                </div>
+                <div class="nav-icon-name">
+                    <a href="/domainblocking">
+                        <!-- <img src="../assets/domain.png" alt="" id="navigation-images"> -->
+                        <img src="{{ url_for('static', filename='assets/navigation/domain.png') }}" alt="" id="navigation-images">
+                        <p>Domain Blocking</p>
+                    </a>
+                </div>
+                <div class="nav-icon-name">
+                    <a href="/passwordmanager">
+                        <!-- <img src="../assets/password-manager.png" alt="" id="navigation-images"> -->
+                        <img src="{{ url_for('static', filename='assets/navigation/password-manager.png') }}" alt="" id="navigation-images">
+                        <p>Password Manager</p>
+                    </a>
+                </div>
+                <div class="nav-icon-name">
+                    <a href="/phishingurldetection">
+                        <!-- <img src="../assets/phishing.png" alt="" id="navigation-images"> -->
+                        <img src="{{ url_for('static', filename='assets/navigation/phishing.png') }}" alt="" id="navigation-images">
+                        <p>Phishing</p>
+                    </a>
+                </div>
+                <!-- <div class="nav-icon-name">
+                    <a href="/help">
+                        <img src="../assets/question.png" alt="" id="navigation-images">
+                        <img src="{{ url_for('static', filename='assets/navigation/question.png') }}" alt="" id="navigation-images">
+                        <p>Help</p>
+                    </a>
+                </div> -->
+            </nav>
+        </div>
+
+    </aside>
+
+    <!-- body main content for all websites --> 
+
+    <!-- starting the body content -->
+    {% block body %}
+
+    <!-- ending the boy content -->
+    {% endblock %}
+
+    <!-- <script src="../static/navigation.js"></script> -->
+    <script src="{{ url_for('static', filename='scripts/navigation.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- js code block -->
+    {% block script %}
+
+    <!-- js code block end -->
+    {% endblock %}
+
+</body>
+</html>

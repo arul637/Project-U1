@@ -1,0 +1,164 @@
+.phishing-content {
+    background-color: white;
+    width: 35rem;
+    margin: 5rem auto;
+    border-radius: 0.5rem;
+    box-shadow: var(--light-shadow);
+    padding: 1rem;
+    transition: var(--common-transition);
+}
+
+#url {
+    font-family: sans-serif;
+}
+
+.phishing-content form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.phishing-content form input {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1.5px solid var(--secondary-color);
+    font-size: 0.85rem;
+    letter-spacing: 0.85px;
+    transition: var(--common-transition);
+}
+
+.phishing-content form input:focus {
+    outline: none;
+    border: 1.5px solid var(--third-color);
+}
+
+.submit-button {
+    background-color: var(--secondary-color);
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    transition: var(--common-transition);
+    width: 20%;
+}
+
+.submit-button:hover {
+    background-color: var(--third-color);
+    border: 1.5px solid var(--third-color);
+}
+
+.url-input {
+    width: 75%;
+}
+
+.phishing-values {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem auto;
+}
+
+.phishing-values div .url {
+    text-align: center;
+    font-size: 1.5rem;
+}
+.phishprediction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+    transition: var(--common-transition);
+}
+
+.circle {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+    box-shadow: var(--light-shadow);
+    transition: var(--common-transition);
+}
+
+.circle:hover {
+    background-color: var(--third-color);
+    box-shadow: var(--light-shadow);
+}
+
+.circle-phishing p {
+    letter-spacing: 1px;
+}
+
+.circle-phishing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .phishing-content {
+        width: 30rem;
+        margin: 5rem auto;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .phishing-content {
+        width: 25rem;
+        margin: 4rem auto;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .phishing-content {
+        width: 23.5rem;
+        margin: 3.5rem auto;
+    }
+    .url-input {
+        width: 70%;
+    }
+    .submit-button {
+        width: 25%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .phishing-content {
+        width: 20rem;
+        margin: 2.5rem auto;
+    }
+    .phishprediction {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .phishing-content form {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .url-input {
+        width: 100%;
+    }
+    .submit-button {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .phishing-content {
+        width: 18rem;
+        margin: 2rem auto;
+    }
+    .phishprediction {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .phishing-content form {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .url-input {
+        width: 100%;
+    }
+    .submit-button {
+        width: 100%;
+    }
+}

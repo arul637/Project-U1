@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Dashboard</title>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/dashboard.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<section class="dashboard">
+    <div class="dashboard-content">
+        <div class="space-between">
+            <p>ISP</p>
+            <p class="isp">{{isp}}</p>
+        </div>
+        <div class="space-between">
+            <p>Time Zone</p>
+            <p>{{timezone}}</p>
+        </div>
+    </div>
+    
+    <div class="dashboard-content">
+        <div class="space-between">
+            <p>Public IP:</p>
+            <p>{{publicip}}</p>
+        </div>
+        <div class="space-between">
+            <p>Private IP:</p>
+            <p>{{privateip}}</p>
+        </div>
+    </div>
+    <div class="dashboard-content">
+        <div class="space-between">
+            <p>Country</p>
+            <p>{{country}}</p>
+        </div>
+        <div class="space-between">
+            <p>State</p>
+            <p>{{state}}</p>
+        </div>
+        <div class="space-between">
+            <p>City</p>
+            <p>{{city}}</p>
+        </div>
+        <div class="space-between">
+            <p>Pincode</p>
+            <p>{{pincode}}</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

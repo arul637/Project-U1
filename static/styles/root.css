@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --background-color: aliceblue;
+    --secondary-color: rgb(195, 230, 255);
+    --third-color: rgb(120, 190, 255);
+    --forth-color: rgb(50, 150, 250);
+    --header-color: orange;
+    --bg-transition: background-color 0.25s ease;
+    --common-transition: all 0.15s ease;
+    --light-shadow: 0 0.5px 5.5px 0 rgb(220, 220, 220);
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--third-color);
+}
+
+header {
+    background-color: var(--header-color);
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+header button {
+    background-color: orange;
+    border: none;
+}
+
+#main-images {
+    width: 2rem;
+}
+
+#navigation-images {
+    width: 1.5rem;
+}
+
+.sidebar {
+    width: 20rem;
+    background-color: white;
+    height: 100vh;
+    position: absolute;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    box-shadow: var(--light-shadow);
+    top: 0;
+    transform: translate(-105%);
+    transition: var(--common-transition);
+}
+
+.show-sidebar {
+    transform: translate(0);
+}
+
+#logo h1 {
+    text-align: center;
+    margin: 1rem;
+}
+
+.nav-icon-name a {
+    display: flex;
+    padding: 1rem;
+    gap: 2rem;
+    transition: var(--common-transition);
+    border-top-right-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+}
+
+.nav-icon-name p {
+    color: black;
+}
+
+.nav-icon-name a:hover {
+    background-color: var(--secondary-color);
+    box-shadow: var(--light-shadow);
+}
+
+.nav-icon-name a:active {
+    background-color: var(--third-color);
+    box-shadow: var(--light-shadow);
+}
+
+#logo {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1rem;
+    align-items: center;
+}
+
+@media only screen and (max-width: 500px) {
+    .sidebar {
+        width: 18rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .sidebar {
+        width: 15rem;
+    }
+}

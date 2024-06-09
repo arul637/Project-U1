@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+<!-- title of the html -->
+{% block title %}
+<title>Firewall</title>
+{% endblock %}
+
+<!-- css stylesheel block -->
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/firewall.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<main>
+    <h1>Tap to start</h1>
+    <section class="circle" id="cirlce">
+        <h1 class="status" id="status">{{ firewall }}</h1>
+    </section>
+</main>
+
+{% endblock %}
+
+{% block script %}
+<script>
+    const firewall = document.querySelector(".circle");
+    firewall.addEventListener("click", function(){
+        // console.log("firewall is started");
+        let status = document.getElementById("status").textContent;
+        $.ajax({
+            type: "POST",
+            url: "{{ url_for('firewall_status') }}",
+            data: {"status": status}
+        })
+    })
+
+</script>
+{% endblock %}
